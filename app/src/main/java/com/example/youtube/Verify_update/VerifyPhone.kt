@@ -1,18 +1,14 @@
-package com.example.youtube
+package com.example.youtube.Verify_update
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import android.widget.Toast
-import androidx.core.content.ContextCompat
-import androidx.core.content.ContextCompat.startActivity
+import com.example.youtube.R
 import com.example.youtube.fragment.ProfileFragment
-import com.google.android.gms.tasks.OnCompleteListener
+import com.example.youtube.toast
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthProvider
 import kotlinx.android.synthetic.main.activity_verify_phone.*

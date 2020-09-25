@@ -17,7 +17,7 @@ class RegisterActivity : AppCompatActivity() {
         mAuth = FirebaseAuth.getInstance()
         val signIn_msg: TextView = findViewById(R.id.signIn_msg)
         signIn_msg.setOnClickListener(View.OnClickListener {
-            val intent = Intent(this, StartActivity::class.java)
+            val intent = Intent(this, Login::class.java)
             startActivity(intent)
         })
 

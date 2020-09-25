@@ -8,6 +8,7 @@ import android.util.Patterns
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
+import com.example.youtube.Verify_update.PasswordResetActivity
 import com.google.firebase.auth.EmailAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_login2.*
@@ -33,11 +34,6 @@ class Login : AppCompatActivity() {
                 edit_text_email.requestFocus()
                 return@OnClickListener
             }
-            /* if(email.length!=10){
-                 edit_text_email.error = "verified phone number to be added"
-                 edit_text_email.requestFocus()
-                 return@OnClickListener
-             }*/
             if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
                 edit_text_email.error = "Valid Email Required"
                 edit_text_email.requestFocus()
@@ -49,41 +45,13 @@ class Login : AppCompatActivity() {
                 return@OnClickListener
             }
             loginUser(email, password)
-          /*  val email_credential = EmailAuthProvider.getCredential(email, password)
-            mAuth.currentUser!!.linkWithCredential(email_credential)
-                .addOnCompleteListener(this) { task ->
-                    if (task.isSuccessful) {
-                 //       Log.d(TAG, "linkWithCredential:success")
-                        val user = task.result?.user
-                        Toast.makeText(baseContext, "Authentication done.",
-                            Toast.LENGTH_SHORT).show()
-                    } else {
-                        Log.w("it is", "linkWithCredential:failure", task.exception)
-                        Toast.makeText(baseContext, "Authentication failed.",
-                            Toast.LENGTH_SHORT).show()
-                    }
-
-                    // ...
-                }
-            val prevUser = mAuth.currentUser
-            mAuth.signInWithCredential(email_credential)
-                .addOnSuccessListener { result ->
-                    val currentUser = result.user
-                    // Merge prevUser and currentUser accounts and data
-                    // ...
-                }
-                .addOnFailureListener {
-                    // ...
-                }*/
 
 
         })
-      /*  login_with_phone.setOnClickListener(View.OnClickListener {
-            val intent = Intent(this, RegisterActivity::class.java)
-            startActivity(intent)
-        })*/
-
-
+    forgot_password.setOnClickListener{
+        val intent = Intent(this, PasswordResetActivity::class.java)
+        startActivity(intent)
+    }
     }
 
     private fun loginUser(email: String, password: String) {

@@ -7,11 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.youtube.R
-import com.example.youtube.RegisterActivity
-import com.example.youtube.VerifyPhone
+import com.example.youtube.Verify_update.ChangePassword
+import com.example.youtube.Verify_update.UpdateEmail
+import com.example.youtube.Verify_update.VerifyPhone
 import com.example.youtube.toast
 import com.google.android.gms.tasks.OnCompleteListener
-import com.google.firebase.auth.EmailAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.UserProfileChangeRequest
 import kotlinx.android.synthetic.main.fragment_profile.*
@@ -73,6 +73,14 @@ private val currentUser = FirebaseAuth.getInstance().currentUser
             val intent = Intent(this@ProfileFragment.context, VerifyPhone::class.java)
             startActivity(intent)
         })
+        user_email.setOnClickListener{
+            val intent = Intent(this@ProfileFragment.context, UpdateEmail::class.java)
+            startActivity(intent)
+        }
+        text_password.setOnClickListener{
+            val intent = Intent(this@ProfileFragment.context, ChangePassword::class.java)
+            startActivity(intent)
+        }
     }
 
 
