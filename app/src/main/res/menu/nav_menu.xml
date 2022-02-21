@@ -12,4 +12,7 @@
         android:id="@+id/profile_icon"
         android:icon="@drawable/person"
         android:title="Profile"/>
+    <item  android:id="@+id/liked_icon"
+        android:icon="@drawable/like"
+        android:title="Liked Videos"/>
 </menu>

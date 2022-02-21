@@ -10,7 +10,7 @@
         android:id="@+id/relative"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:background="#00BFA5">
+        android:background="@drawable/back4">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profile_image"
@@ -26,8 +26,10 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/profile_image"
             android:layout_centerHorizontal="true"
+            android:fontFamily="@font/aldrich"
             android:hint="Verify Phone Number"
-            android:textColor="#000"
+            android:textColor="#fff"
+            android:textColorHint="#fff"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -46,8 +48,9 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="#000"
             android:text="A verification code will be sent to you  "
-            android:textSize="24sp" />
+            android:textSize="23sp" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -78,6 +81,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="12dp"
+            android:textColor="#000"
             android:text="Send code " />
 
     </LinearLayout>
@@ -95,6 +99,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="#000"
             android:text="Please wait while we automatically verify your number.If auto verification is not working enter the code  "
             android:textSize="18sp" />
 
@@ -121,6 +126,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:textColor="#000"
             android:layout_margin="12dp"
             android:text="verify" />
     </LinearLayout>

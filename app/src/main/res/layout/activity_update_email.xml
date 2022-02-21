@@ -10,7 +10,7 @@
         android:id="@+id/relative"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:background="#00BFA5">
+        android:background="@drawable/back4">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profile_image"
@@ -26,8 +26,10 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/profile_image"
             android:layout_centerHorizontal="true"
+            android:fontFamily="@font/aldrich"
             android:hint="Update Email"
-            android:textColor="#000"
+            android:textColor="#fff"
+            android:textColorHint="#fff"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -47,6 +49,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Enter password"
+            android:textColor="#000"
             android:textSize="24sp" />
 
         <LinearLayout
@@ -80,6 +83,7 @@
             android:layout_gravity="center"
             android:textAllCaps="false"
             android:layout_margin="12dp"
+            android:textColor="#000"
             android:text="Authenticate" />
 
     </LinearLayout>
@@ -98,6 +102,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Enter your new email-id  "
+            android:textColor="#000"
             android:textSize="18sp" />
 
         <EditText
@@ -118,6 +123,7 @@
             android:layout_gravity="center"
             android:layout_margin="12dp"
             android:text="Update Email"
+            android:textColor="#000"
             android:textAllCaps="false" />
     </LinearLayout>
     <ProgressBar

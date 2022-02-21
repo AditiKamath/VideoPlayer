@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import com.example.youtube.Person
 import com.example.youtube.R
 import com.example.youtube.Verify_update.ChangePassword
 import com.example.youtube.Verify_update.UpdateEmail
@@ -14,17 +16,22 @@ import com.example.youtube.toast
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.UserProfileChangeRequest
+import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.fragment_profile.*
 
 
 class ProfileFragment : Fragment() {
 
 private val currentUser = FirebaseAuth.getInstance().currentUser
+    lateinit var url :String
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+   //      url = arguments?.getString("video_url").toString()
+    //    Toast.makeText(activity,url,Toast.LENGTH_SHORT).show()
         return inflater.inflate(R.layout.fragment_profile, container, false)
     }
 
@@ -41,7 +48,7 @@ private val currentUser = FirebaseAuth.getInstance().currentUser
             }
         }
         save_changes.setOnClickListener(View.OnClickListener {
-            val name = user_name.text.toString().trim()
+             val name = user_name.text.toString().trim()
             if(name.isEmpty()){
                 user_name.error = "name required"
                 user_name.requestFocus()
@@ -81,7 +88,27 @@ private val currentUser = FirebaseAuth.getInstance().currentUser
             val intent = Intent(this@ProfileFragment.context, ChangePassword::class.java)
             startActivity(intent)
         }
+        add_bdate.setOnClickListener {
+            saveDate()
+        }
+
     }
+    private fun saveDate(){
+        val date : String = bdate.text.toString().trim()
+        if(date.isEmpty()) {
+            bdate.error = "Enter a valid date"
+            return
+        }
+       val pname = user_name.text.toString().trim()
+        val ref = FirebaseDatabase.getInstance().getReference("User Details")
+        var pid :String = ref.push().key.toString()
+        val user   = Person(pid,pname,date)
+        ref.child(pid).setValue(user).addOnCompleteListener {
+            Toast.makeText(activity,"User details saved",Toast.LENGTH_SHORT).show()
+        }
+    }
+
+
 
 
 

@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/search_fragment"
     tools:context=".fragment.VideoFragment">
 
     <RelativeLayout
@@ -24,11 +25,12 @@
                 android:layout_marginRight="8dp"
                 android:layout_weight="1" />
 
+
             <Button
                 android:id="@+id/button_search"
-                android:layout_width="100dp"
-                android:layout_height="50dp"
-                android:text="search " />
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/search" />
 
         </LinearLayout>
         <androidx.recyclerview.widget.RecyclerView
@@ -36,10 +38,10 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:layout_below="@+id/search_layout"
-            android:id="@+id/recyclerView"/>
+            android:id="@+id/recyclerView_videos"/>
         <TextView
             android:layout_margin="20sp"
-            android:layout_below="@id/recyclerView"
+            android:layout_below="@id/recyclerView_videos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/result_view"/>

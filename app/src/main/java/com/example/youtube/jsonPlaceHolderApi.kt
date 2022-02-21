@@ -8,10 +8,14 @@ import retrofit2.http.QueryMap
 
 
 interface jsonPlaceHolderApi {
-    @GET("search")
+@GET("search")
     // adding the multiple queries according to our specifications
     fun getSearchResults(@Query("part")part:String,@Query("pageToken")nextPageToken:String,
         @Query("key")key:String,@Query("maxResults")max:Int,
                          @Query("q")search:String) : Call<KeywordSearchResult>
+
+
+    @GET("videos")
+    fun getVideo(@QueryMap queryMap: Map<String, String>) : Call<LikedVideoSearchResult>
 
 }
